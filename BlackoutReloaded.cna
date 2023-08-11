@@ -1,7 +1,7 @@
 # Register help
 beacon_command_register("blackout_reloaded", 
 	"Kill any anti-malware protected process using a new signed vulnerable driver.",
-	"Synopsis: blackout_reloaded [pid]\nSynopsis: blackout_reloaded [process name]"
+	"Kill any anti-malware protected process using a new signed vulnerable driver.\nSynopsis: blackout_reloaded [pid]\nSynopsis: blackout_reloaded [process name]"
 );
 
 # Register alias
