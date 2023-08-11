@@ -36,7 +36,7 @@ Load the `BlackoutReloaded.cna` script using the Cobalt Strike Script Manager. T
 
 Alternatively (and for testing purposes), you can directly run the compiled executable. 
 
-    $ .\BlackoutReloaded.x64.exe
+    $ .\BlackoutReloaded.exe
 
 ## Todo
 

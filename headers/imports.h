@@ -33,6 +33,14 @@
 	#define FormatMessageA KERNEL32$FormatMessageA
 	DECLSPEC_IMPORT HMODULE WINAPI KERNEL32$GetModuleHandleW(LPCWSTR);
 	#define GetModuleHandleW KERNEL32$GetModuleHandleW
+	DECLSPEC_IMPORT HANDLE WINAPI KERNEL32$CreateToolhelp32Snapshot(DWORD, DWORD);
+	#define CreateToolhelp32Snapshot KERNEL32$CreateToolhelp32Snapshot
+	DECLSPEC_IMPORT BOOL WINAPI KERNEL32$Process32First(HANDLE, LPPROCESSENTRY32);
+	#define Process32First KERNEL32$Process32First
+	DECLSPEC_IMPORT BOOL WINAPI KERNEL32$Process32Next(HANDLE, LPPROCESSENTRY32);
+	#define Process32Next KERNEL32$Process32Next
+	DECLSPEC_IMPORT DWORD WINAPI KERNEL32$FormatMessageW(DWORD, LPCVOID, DWORD, DWORD, LPWSTR, DWORD, va_list*);
+	#define FormatMessageW KERNEL32$FormatMessageW
 
 	DECLSPEC_IMPORT LPVOID WINAPI KERNEL32$VirtualAlloc(LPVOID, SIZE_T, DWORD, DWORD);
 	#define VirtualAlloc KERNEL32$VirtualAlloc
@@ -90,11 +98,16 @@
 	#define memcpy MSVCRT$memcpy
 	WINBASEAPI  size_t      __cdecl     MSVCRT$strlen (const char*);
 	#define strlen MSVCRT$strlen
+	WINBASEAPI  int         __cdecl     MSVCRT$_stricmp (const char*, const char*);
+	#define stricmp MSVCRT$_stricmp
+	WINBASEAPI  int         __cdecl     MSVCRT$strcmp (const char*, const char*);
+	#define strcmp MSVCRT$strcmp
 	WINBASEAPI  size_t      __cdecl     MSVCRT$mbstowcs (wchar_t*, const char*, size_t);
 	#define mbstowcs MSVCRT$mbstowcs
 	WINBASEAPI  size_t      __cdecl     MSVCRT$wcstombs (char*, const wchar_t*, size_t);
 	#define wcstombs MSVCRT$wcstombs
 	WINBASEAPI  void     	__cdecl     MSVCRT$free (void*);
 	#define free MSVCRT$free
-
+	WINBASEAPI  long     	__cdecl     MSVCRT$strtol (const char *string, char **end_ptr, int base);
+	#define strtol MSVCRT$strtol
 #endif
