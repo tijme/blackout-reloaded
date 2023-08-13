@@ -73,7 +73,6 @@
  * Windows API.
  * 
  * Contains declarations for all of the functions, macro's & data types in the Windows API.
- * Define 'WIN32_LEAN_AND_MEAN' to make sure windows.h compiles without warnings.
  * https://docs.microsoft.com/en-us/previous-versions//aa383749(v=vs.85)?redirectedfrom=MSDN
  */
 #include <windows.h>
