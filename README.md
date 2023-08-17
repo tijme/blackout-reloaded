@@ -14,7 +14,7 @@
 
 This is a Cobalt Strike (CS) Beacon Object File (BOF) and executable which exploits [ADRMDRVSYS.sys](https://www.virustotal.com/gui/file/ff5dbdcf6d7ae5d97b6f3ef412df0b977ba4a844c45b30ca78c0eeb2653d69a8), a driver used by Topaz Antifraud. It will kill any anti-malware protected process of choice. The exploit calls an IOCTL for which the user buffer ends up in a call to `ZwTerminateProcess`. The exploit is inspired upon work from [@ZeroMemoryEx](https://github.com/ZeroMemoryEx), namely their [Blackout](https://github.com/ZeroMemoryEx/Blackout/) project.
 
-**Read the full blog post [here](https://tij.me/blog/killing-anti-malware%20protected-processes-with-blackout-reloaded/).**
+**Read the full blog post [here](https://tij.me/blog/killing-anti-malware-protected-processes-with-blackout-reloaded/).**
 
 <p align="center">
     <img width="1000" src="https://raw.githubusercontent.com/tijme/blackout-reloaded/master/.github/screenshot.png" />
